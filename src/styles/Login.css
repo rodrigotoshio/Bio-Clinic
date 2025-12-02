@@ -1,0 +1,319 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif; /* Adicionado fallback */
+    color: #333;
+    
+}
+
+/* 3. O CARTÃO DE LOGIN (Seu estilo "perfeito") */
+.login-card {
+    position: relative; /* Necessário para ficar acima do pseudo-elemento */
+    z-index: 1;
+    background-color: #ffffff;
+    padding: 15px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 350px;
+    margin: 0px; /* Centraliza o card */
+    margin-right: 200px; /* Adicionado para mover o card para a direita */
+    display: block !important; /* Força a exibição do card */
+}
+
+.login-form {
+    width: 100%; /* Permite que o formulário preencha o card */
+    height: 100%;
+    padding: 0; /* Removendo padding do form para que o card o controle */
+}
+
+.login-form h1 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;                /* 2. O peso (400 = regular) */
+    font-size: 32px;
+    color: #630527; 
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.login-form .subtitulo {
+    text-align: center;
+    color: #000000;
+    margin-bottom: 30px;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;                /* 2. O peso (400 = regular) */
+}
+
+/* 4. GRUPOS DE INPUT (LABEL + CAMPO + ÍCONE) */
+.input-group {
+    margin-bottom: 20px;
+    text-align: left; 
+}
+
+.input-group label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333333;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;  
+}
+
+.input-field {
+    position: relative; /* Para posicionar o ícone dentro dele */
+}
+
+/* Estilo para <input> e <InputMask> */
+.input-field input {
+    width: 100%;
+    padding: 10px 40px 10px 5px; /* Espaço para o ícone à direita */
+    border: none;
+    border-bottom: 2px solid #ccc;
+    font-size: 16px;
+    transition: border-color 0.3s;
+    font-family: 'Inter', sans-serif; /* Garante que a máscara use a fonte */
+}
+
+.input-field input:focus {
+    outline: none;
+    border-bottom-color: #b42864; /* Cor rosa/vinho */
+}
+
+.input-field .icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+}
+
+#toggle-senha {
+    cursor: pointer;
+}
+
+.esqueci-senha {
+    display: block;
+    text-align: right;
+    font-size: 12px;
+    color: #810303;
+    text-decoration: none;
+    margin-top: 5px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;  
+}
+
+/* 5. OPÇÕES DE ENTRADA */
+.opcoes-entrada {
+    margin: 25px 0;
+}
+
+.opcoes-entrada p {
+    font-size: 14px;
+    color: #000000;
+    margin-bottom: 10px;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;  
+}
+
+.botoes-opcoes {
+    display: flex; 
+    gap: 15px; 
+}
+
+.btn-opcao {
+    flex: 1; 
+    padding: 12px;
+    border: none;
+    border-radius: 30px;
+    background-color: #E6A5A5; 
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;  
+}
+
+.btn-opcao:hover {
+    background-color: #f8d0e0;
+}
+
+/* 6. BOTÃO PRINCIPAL "cadastrar" */
+.btn-cadastrar {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+    background-color: #E6A5A5; /* Rosa mais forte */
+    color: #FFFFFF;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;  
+}
+
+.btn-cadastrar:hover {
+    background-color: #b88888;
+}
+
+
+
+/* 7. LINK DE CADASTRO */
+.link-cadastro {
+    text-align: center;
+    font-size: 14px;
+    color: #000000;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Estiliza o <Link> do React Router */
+.link-cadastro a {
+    color: #630527;
+    font-weight: 700;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+}
+
+
+/* --- NOVOS ESTILOS PARA OS MÉTODOS DE LOGIN --- */
+
+/* Estilo para a caixa de scan (baseado na imagem 'image_a511b9.png') */
+.scan-placeholder {
+    width: 100%;
+    max-width: 400px; /* Aumentado para permitir um tamanho maior da câmera */
+    aspect-ratio: 1 / 1; /* Quadrado */
+    background-color: #fff; 
+    border: 5px solid #630527; /* Borda escura */
+    border-radius: 20px; /* Cantos arredondados */
+    margin: 15px auto; /* Centraliza */
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    
+    /* Para centralizar o texto "CÂMERA" */
+    display: flex;
+    flex-direction: column; /* Organiza os itens em coluna */
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px; /* Adiciona espaço acima, já que o título sumiu */
+    margin-bottom: 30px; /* Adiciona espaço abaixo */
+    overflow: hidden; /* Garante que o vídeo não saia da borda arredondada */
+    position: relative; /* Para posicionar o vídeo absolutamente dentro */
+}
+
+/* NOVO: Estilo para o vídeo da câmera */
+.camera-feed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-width: 0; /* Garante que o vídeo não seja menor que o necessário */
+    max-width: 100%; /* Garante que o vídeo não exceda o container */
+    min-height: 0; /* Garante que o vídeo não seja menor que o necessário */
+    max-height: 100%; /* Garante que o vídeo não exceda o container */
+    object-fit: cover; /* Alterado de 'contain' para 'cover' para preencher o container */
+    border-radius: 15px; /* Para respeitar o border-radius do container */
+    transform: translateZ(0); /* Hack de aceleração de hardware para estabilizar */
+}
+
+/* NOVO: Estilo para o texto "CÂMERA" (quando a câmera não está ativa) */
+.scan-placeholder .camera-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400; /* 400 é 'regular' */
+    font-size: 28px; 
+    color: #000000;
+    z-index: 1; /* Garante que o texto fique acima do vídeo, se por acaso algo desse errado */
+}
+
+/* NOVO: Estilo para o botão de Capturar Rosto */
+.btn-capturar-rosto {
+    margin-top: 20px; /* Adiciona um espaço acima para separar do vídeo */
+    width: 100%;
+
+}
+
+/* Estilo para o botão "Voltar" (Nome/Senha) */
+.btn-voltar {
+    background-color: #E6A5A5; 
+    color: #FFFFFF; 
+}
+.btn-opcao {
+    margin-top: 10px; /* Espaço acima do botão Entrar */
+    background-color: #E6A5A5; 
+
+}
+.btn-opcao:hover {
+    background-color: #b88888;
+}
+
+.btn-voltar:hover {
+    background-color: #e0e0e0; 
+}
+
+/* Botão de Voltar específico do FaceID */
+.btn-faceid-voltar {
+    width: 100%;
+    margin-top: 15px; /* Espaço acima do botão Voltar */
+}
+
+/* --- NOVOS ESTILOS PARA MENSAGENS DE ALERTA --- */
+
+/* Mensagem de Erro (Vermelha) */
+.mensagem-alerta {
+    background-color: #ffebee; /* Fundo vermelho-claro */
+    color: #c62828; /* Texto vermelho-escuro */
+    border: 1px solid #c62828;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 20px; 
+    word-wrap: break-word;
+}
+
+/* Mensagem de Sucesso (Verde) */
+.mensagem-sucesso {
+    background-color: #e8f5e9; /* Fundo verde-claro */
+    color: #2e7d32; /* Texto verde-escuro */
+    border: 1px solid #2e7d32;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 20px; 
+    word-wrap: break-word;
+}
+
+/* ======================================= */
+/* CÓDIGO RESPONSIVO         */
+/* ======================================= */
+@media (max-width: 768px) {
+
+    /* 1. Manda o body centralizar o cartão na horizontal */
+    body {
+        justify-content: center;
+    }
+
+    /* 2. Esconde a forma diagonal branca, que não cabe no celular */
+    body::before {
+        display: none;
+    }
+
+    /* 3. Remove a margem fixa de 800px e centraliza o cartão */
+    .login-card {
+        margin-left: 0; /* Remove a margem de 800px */
+        width: 90%; /* Ocupa 90% da tela */
+    }
+}

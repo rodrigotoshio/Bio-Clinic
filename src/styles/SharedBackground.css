@@ -1,0 +1,37 @@
+.background-container {
+    background-image: linear-gradient(to right, rgba(100, 20, 80, 0.8), rgba(180, 40, 100, 0.6)), url('/src/assets/imagens/fundo1.svg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow-x: hidden;
+    
+    /* Layout para desktop (como você queria) */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Posiciona o card à direita */
+    padding: 5px;
+}
+
+.background-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 80%;
+    width: 80%; 
+    height: 100%;
+    background-color: #ffffff;
+    transform: skewX(-15deg); 
+    transform-origin: top left;
+    z-index: 0; 
+}
+
+@media (max-width: 700px) {
+    .background-container {
+        justify-content: center; /* Centraliza o card na horizontal em telas menores */
+    }
+    .background-container::before {
+        display: none;
+    }
+}

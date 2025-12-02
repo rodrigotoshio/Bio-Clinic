@@ -1,0 +1,100 @@
+/* O FaceSuccess.jsx já importa o Login.css, 
+   por isso só precisamos de adicionar os estilos novos. */
+
+/* Novo estilo para o cartão de sucesso */
+.face-success-card {
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 75%; /* Movido mais para a direita */
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 400px; /* Largura máxima conforme a especificação */
+    aspect-ratio: 1 / 1; /* Para manter a proporção quadrada */
+    background-color: #fff; 
+    border: 5px solid #630527; /* Borda escura */
+    border-radius: 20px; /* Cantos arredondados */
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    z-index: 1;
+    display: flex; /* Para centralizar o conteúdo interno */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px; /* Adicionado padding interno */
+    height: 450px;
+    width: 350px;
+}
+
+/* Container para o ícone de sucesso e a mensagem */
+.faceid-success-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0; /* Ajustado para centralizar com o flexbox do formulário */
+    margin-bottom: 0; /* Ajustado para centralizar com o flexbox do formulário */
+}
+
+/* Ícone de check (sucesso) */
+.face-icon-success {
+    width: 199px; /* Largura conforme a especificação */
+    height: 200px; /* Altura conforme a especificação */
+    margin-bottom: 50px; /* Espaço entre o ícone e o texto */
+}
+
+/* Texto de sucesso */
+.faceid-success-message {
+    /* position: absolute; */ /* Removido: Usaremos flexbox para posicionamento */
+    width: 100%; /* Permite que o texto ocupe a largura total disponível */
+    max-width: 400px; /* Limita a largura para não exceder o card */
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 39px;
+    text-align: center;
+    color: #000000;
+}
+
+/* Botão "ENTRAR" do Face ID */
+.btn-faceid-entrar {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 30px;
+    background-color: #2e7d32; /* Fundo Verde */
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;  
+    margin-top: 15px;
+}
+.btn-faceid-entrar:hover {
+    background-color: #388e3c; /* Verde um pouco mais claro */
+}
+
+/* ======================================= */
+/* CÓDIGO RESPONSIVO         */
+/* ======================================= */
+@media (max-width: 768px) {
+    .face-success-card {
+        width: 90%; /* Ajusta a largura do card em telas menores */
+        height: auto; /* Permite que a altura se ajuste */
+        padding: 10px; /* Reduz o padding */
+    }
+
+    .face-icon-success {
+        width: 150px; /* Reduz o tamanho do ícone */
+        height: 150px;
+        margin-bottom: 20px;
+    }
+
+    .faceid-success-message {
+        font-size: 24px; /* Reduz o tamanho da fonte da mensagem */
+        line-height: 30px;
+    }
+}
+
+/* O estilo para o link foi removido */

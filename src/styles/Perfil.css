@@ -1,0 +1,134 @@
+/* src/styles/Perfil.css */
+
+/* Reutiliza e ajusta o cartão para o conteúdo da câmera */
+.login-card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; /* Um pouco mais largo para caber a câmera */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 50px;
+    align-content: center;
+    
+
+}
+
+/* Título */
+.login-card h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    color: #630527;
+    margin-bottom: 5px;
+}
+
+/* Texto de instrução */
+.login-card p {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+/* --- Container da Câmera --- */
+.camera-container {
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
+    background-color: #000; /* Fundo preto enquanto carrega */
+    border-radius: 20px; /* Bordas arredondadas na câmera */
+    overflow: hidden; /* Garante que o vídeo não saia das bordas */
+    margin-bottom: 15px;
+    border: 4px solid #E6A5A5; /* Uma borda suave rosa para combinar */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* O elemento de vídeo em si */
+.camera-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Preenche o quadrado sem distorcer */
+    transform: scaleX(-1); /* Espelha a imagem (efeito espelho) para ficar natural */
+}
+
+/* --- Status --- */
+.status-facial {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #630527;
+    margin-bottom: 20px;
+    min-height: 20px; /* Evita que a tela pule quando o texto muda */
+}
+
+/* --- Botões --- */
+
+/* Botão Principal (Capturar) */
+.btn-entrar {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 30px;
+    background-color: #630527; 
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    /* Mudamos aqui para 'all' para animar o movimento também */
+    transition: all 0.3s ease; 
+    font-family: 'Inter', sans-serif;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Sombra inicial suave */
+
+}
+
+.btn-entrar:hover {
+    transform: translateY(-3px); /* Move para cima */
+    box-shadow: 0 10px 20px rgba(99, 5, 39, 0.4); /* Sombra maior e colorida em baixo */
+
+}
+
+/* Botão Desabilitado (enquanto carrega) */
+.btn-entrar:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Botão Voltar/Sair */
+.btn-voltar {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 30px;
+    background-color: #E6A5A5; /* Rosa padrão do projeto */
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 15px;
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.3s;
+}
+
+.btn-voltar:hover {
+    background-color: #b88888;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .login-card {
+        width: 90%;
+        padding: 20px;
+    }
+    
+    .camera-container {
+        height: 250px; /* Câmera um pouco menor no celular */
+    }
+}

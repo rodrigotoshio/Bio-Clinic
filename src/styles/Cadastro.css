@@ -1,0 +1,47 @@
+/* ... (todo o seu CSS anterior) ... */
+
+
+/* --- NOVOS ESTILOS PARA MENSAGENS DE ALERTA --- */
+
+/* Mensagem de Erro (Vermelha) */
+.mensagem-erro {
+    color: #c62828; /* Texto vermelho-escuro */
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 10px; 
+    word-wrap: break-word;
+}
+
+/* Mensagem de Sucesso (Verde) */
+.mensagem-sucesso {
+    background-color: #e8f5e9; /* Fundo verde-claro */
+    color: #2e7d32; /* Texto verde-escuro */
+    border: 1px solid #2e7d32;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 20px; 
+    word-wrap: break-word;
+}
+
+.mensagem-erro {
+    color: #e74c3c; /* Vermelho mais forte */
+    font-size: 0.85em;
+    margin-top: 5px;
+    text-align: left;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .mensagem-erro,
+    .mensagem-sucesso {
+        font-size: 12px; /* Reduz o tamanho da fonte das mensagens em telas menores */
+    }
+}
+
+
